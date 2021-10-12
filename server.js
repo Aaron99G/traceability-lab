@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 
+const app = express();
+
 var Rollbar = require('rollbar')
 var rollbar = new Rollbar({
     accessToken: '38a11775a02f489abf5624dd43a94cf5',
@@ -10,9 +12,6 @@ var rollbar = new Rollbar({
 
 
 rollbar.log('Hello world!')
-
-const app = express();
-
 
 app.use(express.json());
 
