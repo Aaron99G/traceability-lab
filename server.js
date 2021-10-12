@@ -29,7 +29,13 @@ try {
     console.error('error');
 }
 
-// app.use(rollbar.errorHandler())
+Rollbar.critical("Connection error from remote Payments API");
+Rollbar.error("Some unexpected condition");
+Rollbar.warning("Connection error from Twitter API");
+Rollbar.info("User opened the purchase dialog");
+Rollbar.debug("Purchase dialog finished rendering");
+
+app.use(rollbar.errorHandler())
 
 const port = process.env.PORT || 4400;
 
