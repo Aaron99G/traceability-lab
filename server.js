@@ -16,12 +16,12 @@ const app = express();
 
 app.use(express.json());
 
-app.use('/styles', express.static(path.join(__dirname, './public/styles.css')))
-
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'))
     rollbar.info('html file served successfully')
 })
+
+app.use('/styles', express.static(path.join(__dirname, './public/styles.css')))
 
 try {
     nonExistentFunction();
