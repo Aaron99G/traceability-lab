@@ -20,6 +20,7 @@ app.get('/', (req, res) => {
     rollbar.info('html file served successfully')
 })
 
+
 app.use('/styles', express.static(path.join(__dirname, './public/styles.css')))
 
 try {
