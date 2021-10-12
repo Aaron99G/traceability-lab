@@ -18,18 +18,14 @@ app.use(express.json());
 
 app.use('/styles', express.static(path.join(__dirname, './public/styles.css')))
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/index.html'))
-    rollbar.info('html file served successfully')
-})
 
-let students = []
+try {
+    nonExistentFunction();
+} catch (error) {
+    console.error(error);
+}
 
-app.post(('/api/student'), (req, res) => {
-
-})
-
-app.use(rollbar.errorHandler())
+// app.use(rollbar.errorHandler())
 
 const port = process.env.PORT || 4400;
 
