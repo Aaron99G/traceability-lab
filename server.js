@@ -26,7 +26,7 @@ app.use('/styles', express.static(path.join(__dirname, './public/styles.css')))
 try {
     nonExistentFunction();
 } catch (error) {
-    console.error(error);
+    console.error('error');
 }
 
 // app.use(rollbar.errorHandler())
