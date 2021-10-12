@@ -29,10 +29,21 @@ try {
     console.error('error');
 }
 
+app.post('')
+
+let gtr = document.getElementById('vehicle1')
+let rx7 = document.getElementById('vehicle2')
+let nsx = document.getElementById('vehicle3')
+
+gtr.addEventListener('change', () => {
+    if (gtr.checked) {
+        Rollbar.info("User has good taste in cars");
+    }
+})
+
 Rollbar.critical("Connection error from remote Payments API");
 Rollbar.error("Some unexpected condition");
 Rollbar.warning("Connection error from Twitter API");
-Rollbar.info("User opened the purchase dialog");
 Rollbar.debug("Purchase dialog finished rendering");
 
 app.use(rollbar.errorHandler())
