@@ -23,13 +23,13 @@ app.get('/', (req, res) => {
 
 app.use('/styles', express.static(path.join(__dirname, './public/styles.css')))
 
-try {
-    nonExistentFunction();
-} catch (error) {
-    console.error('error');
-}
+// try {
+//     nonExistentFunction();
+// } catch (error) {
+//     console.error('Somthing went wrong!');
+// }
 
-app.post('')
+// app.post('')
 
 let gtr = document.getElementById('vehicle1')
 let rx7 = document.getElementById('vehicle2')
@@ -41,10 +41,10 @@ gtr.addEventListener('change', () => {
     }
 })
 
-Rollbar.critical("Connection error from remote Payments API");
-Rollbar.error("Some unexpected condition");
-Rollbar.warning("Connection error from Twitter API");
-Rollbar.debug("Purchase dialog finished rendering");
+// Rollbar.critical("Connection error from remote Payments API");
+// Rollbar.error("Some unexpected condition");
+// Rollbar.warning("Connection error from Twitter API");
+// Rollbar.debug("Purchase dialog finished rendering");
 
 app.use(rollbar.errorHandler())
 
